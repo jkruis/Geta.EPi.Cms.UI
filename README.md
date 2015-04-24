@@ -9,8 +9,10 @@ Install NuGet package (use Geta NuGet feed).
 
 ## Currently available editors
 
-### Font Awesome auto complete editor
+### Font Awesome selection/auto complete editor
 
     [FontAwesomeSelection]
     [UIHint(GetaUIHint.FontAwesomeIcon)]
     public virtual string IconCssClass { get; set; }
+
+![ScreenShot](/docs/fontawesome-autocomplete.jpg)
