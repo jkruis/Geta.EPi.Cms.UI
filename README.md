@@ -11,7 +11,7 @@ Install NuGet package (use Geta NuGet feed).
 
 ### Font Awesome selection/autocomplete editor
 
-Add ability to search and browse through all Font Awesome icons.
+Adds ability to search and browse through all Font Awesome icons.
 
     [FontAwesomeSelection]
     [UIHint(GetaUIHint.FontAwesomeIcon)]
