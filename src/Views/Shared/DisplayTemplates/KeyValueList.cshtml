@@ -1,0 +1,12 @@
+﻿@model IEnumerable<KeyValuePair<string, string>>
+
+@if (Model != null && Model.Any())
+{
+    <dl class="@ViewData["ListCssClass"]">
+        @foreach (KeyValuePair<string, string> item in Model)
+        {
+            <dt>@item.Key</dt>
+            <dd>@item.Value</dd>
+        }
+    </dl>
+}
