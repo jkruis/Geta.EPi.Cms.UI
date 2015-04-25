@@ -189,9 +189,11 @@
   <ItemGroup>
     <Compile Include="BackingTypes\PropertyJsonSerializedObject.cs" />
     <Compile Include="BackingTypes\PropertyKeyValueList.cs" />
+    <Compile Include="BackingTypes\PropertyStringList.cs" />
     <Compile Include="Configuration\GetaUIHint.cs" />
     <Compile Include="ObjectEditing\FontAwesomeSelectionAttribute.cs" />
     <Compile Include="ObjectEditing\KeyValueListAttribute.cs" />
+    <Compile Include="ObjectEditing\StringListAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +212,7 @@
     <None Include="packages.config" />
     <None Include="Views\Shared\DisplayTemplates\FontAwesomeIcon.cshtml" />
     <None Include="Views\Shared\DisplayTemplates\KeyValueList.cshtml" />
+    <None Include="Views\Shared\DisplayTemplates\StringList.cshtml" />
     <None Include="web.config.transform">
       <SubType>Designer</SubType>
     </None>
@@ -217,6 +220,7 @@
   <ItemGroup>
     <Content Include="ClientResources\Scripts\editors\FontAwesomeAutoSuggestEditor.js" />
     <Content Include="ClientResources\Scripts\editors\KeyValueList.js" />
+    <Content Include="ClientResources\Scripts\editors\StringList.js" />
     <Content Include="ClientResources\Scripts\editors\_FontAwesomeMixin.js" />
     <Content Include="ClientResources\Scripts\fonts\fontawesome-webfont.svg" />
     <Content Include="ClientResources\Scripts\styles\font-awesome.min.css" />

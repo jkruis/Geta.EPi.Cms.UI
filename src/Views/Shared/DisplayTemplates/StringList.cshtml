@@ -1,0 +1,11 @@
+﻿@model string[]
+
+@if (Model != null && Model.Any())
+{
+    <ul class="@ViewData["ListCssClass"]">
+        @foreach (var item in Model)
+        {
+            <li class="@ViewData["ItemCssClass"]">@item</li>
+        }
+    </ul>
+}

@@ -7,9 +7,9 @@ using Geta.EPi.Cms.UI.BackingTypes;
 namespace Geta.EPi.Cms.UI.ObjectEditing
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class KeyValueListAttribute : BackingTypeAttribute, IMetadataAware
+    public class StringListAttribute : BackingTypeAttribute, IMetadataAware
     {
-        public KeyValueListAttribute() : base(typeof(PropertyKeyValueList))
+        public StringListAttribute() : base(typeof(PropertyStringList))
         {
         }
 
@@ -22,7 +22,7 @@ namespace Geta.EPi.Cms.UI.ObjectEditing
                 return;
             }
 
-            extendedMetaData.ClientEditingClass = "geta-epi-cms.editors.KeyValueList";
+            extendedMetaData.ClientEditingClass = "geta-epi-cms.editors.StringList";
         }
     }
 }

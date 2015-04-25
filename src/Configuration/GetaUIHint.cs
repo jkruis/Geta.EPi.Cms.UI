@@ -4,5 +4,6 @@
     {
         public const string FontAwesomeIcon = "FontAwesomeIcon";
         public const string KeyValueList = "KeyValueList";
+        public const string StringList = "StringList";
     }
 }
