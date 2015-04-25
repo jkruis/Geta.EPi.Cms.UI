@@ -22,8 +22,15 @@ Adds ability to search and browse through all Font Awesome icons. Currently base
 ### Key/value list editor
 
     [KeyValueList]
-    [BackingType(typeof(PropertyKeyValueList))]
     [UIHint(GetaUIHint.KeyValueList)]
     public virtual IEnumerable<KeyValuePair<string, string>> KeyValues { get; set; }
 
 ![ScreenShot](/docs/keyvaluelist.jpg)
+
+### String list editor
+
+This is the same one that's included in Alloy templates package.
+
+    [StringList]
+    [UIHint(GetaUIHint.StringList)]
+    public virtual string[] StringList { get; set; }
