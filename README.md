@@ -18,3 +18,10 @@ Adds ability to search and browse through all Font Awesome icons. Currently base
     public virtual string IconCssClass { get; set; }
 
 ![ScreenShot](/docs/fontawesome-autocomplete.jpg)
+
+### Key/value list editor
+
+    [KeyValueList]
+    [BackingType(typeof(PropertyKeyValueList))]
+    [UIHint(GetaUIHint.KeyValueList)]
+    public virtual IEnumerable<KeyValuePair<string, string>> KeyValues { get; set; }
