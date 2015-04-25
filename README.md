@@ -25,3 +25,5 @@ Adds ability to search and browse through all Font Awesome icons. Currently base
     [BackingType(typeof(PropertyKeyValueList))]
     [UIHint(GetaUIHint.KeyValueList)]
     public virtual IEnumerable<KeyValuePair<string, string>> KeyValues { get; set; }
+
+![ScreenShot](/docs/keyvaluelist.jpg)
