@@ -224,7 +224,11 @@
     <Content Include="ClientResources\Scripts\editors\_FontAwesomeMixin.js" />
     <Content Include="ClientResources\Scripts\fonts\fontawesome-webfont.svg" />
     <Content Include="ClientResources\Scripts\styles\font-awesome.min.css" />
+    <Content Include="ClientResources\Scripts\styles\KeyValueList.css" />
     <Content Include="ClientResources\Scripts\templates\KeyValueList.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientResources\Scripts\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProjectDir)\.nuget\NuGet.targets" Condition="Exists('$(ProjectDir)\.nuget\NuGet.targets')" />

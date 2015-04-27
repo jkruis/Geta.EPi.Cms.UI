@@ -1,0 +1,7 @@
+﻿.keyValueListBody .disabled,
+.keyValueListBody .disabled:hover,
+.keyValueListBody .disabled:visited,
+.keyValueListBody .disabled:active {
+    color: #ccc!important;
+    cursor: default;
+}

@@ -15,8 +15,10 @@
         "dijit/form/ValidationTextBox",
         "dijit/form/Button",
         "epi/epi",
-        "epi/shell/widget/_ValueRequiredMixin"
-    ],
+        "epi/shell/widget/_ValueRequiredMixin",
+        'xstyle/css!../styles/font-awesome.min.css',
+        'xstyle/css!../styles/KeyValueList.css'
+],
     function (
         array, 
         declare, 
@@ -24,7 +26,7 @@
         dom, 
         domConstruct, 
         domClass, 
-        on, 
+        on,
         widgetBase, 
         templatedMixin, 
         _WidgetsInTemplateMixin, 
@@ -81,6 +83,7 @@
                     return;
                 }
 
+                this._updateSortIcons();
                 this._set("value", propertyValue);
                 this.onChange(propertyValue);
             },
@@ -88,11 +91,36 @@
             _setValueAttr: function (value) {
                 this._set("value", value);
 
-                array.forEach(value, this._addElementsForItem, this); // Add 'this' to end to make sure the 'this.domNode' works in method. Why?!
+                array.forEach(value, this._addElementsForItem, this);
+                this._updateSortIcons();
             },
 
             _onInputWidgetChanged: function(e) {
                 this._calculateValue();
+            },
+
+            _updateSortIcons: function() {
+                if (this._keyValues.length < 1) {
+                    return;
+                }
+
+                var firstIndex = 0;
+                var lastIndex = this._keyValues.length - 1;
+                var firstItem = this._keyValues[firstIndex];
+
+                array.forEach(this._keyValues, function(entry) {
+                    domClass.remove(entry.sortUpLink, "disabled");
+                    domClass.remove(entry.sortDownLink, "disabled");
+                });
+
+                domClass.add(firstItem.sortUpLink, "disabled");
+
+                if (lastIndex > firstIndex) {
+                    var lastItem = this._keyValues[lastIndex];
+                    domClass.add(lastItem.sortDownLink, "disabled");
+                } else {
+                    domClass.add(firstItem.sortDownLink, "disabled");
+                }
             },
 
             addNewItem: function () {
@@ -107,15 +135,46 @@
                 var firstTd = domConstruct.create("td", null, tr);
                 var secondTd = domConstruct.create("td", null, tr);
                 var thirdTd = domConstruct.create("td", null, tr);
+                var fourthTd = domConstruct.create("td", null, tr);
+                var fifthTd = domConstruct.create("td", null, tr);
 
+                // Key input
                 var key = this._getTextbox(item.key, "key").set("placeholder", "Label");
-
                 key.placeAt(firstTd);
 
+                // Value input
                 var value = this._getTextbox(item.value, "value").set("placeholder", "Content");
-
                 value.placeAt(secondTd);
 
+                // Sort up button
+                var sortUpLink = domConstruct.create("a", { href: "javascript:void(0)" }, thirdTd);
+                var sortUpIcon = domConstruct.create("i", null, sortUpLink);
+                sortUpIcon.setAttribute("class", "fa fa-fw fa-arrow-up");
+
+                // Sort down button
+                var sortDownLink = domConstruct.create("a", { href: "javascript:void(0)" }, fourthTd);
+                var sortDownIcon = domConstruct.create("i", null, sortDownLink);
+                sortDownIcon.setAttribute("class", "fa fa-fw fa-arrow-down");
+
+                on(sortUpLink, "click", lang.hitch(this, function (e) {
+                    if (domClass.contains(sortUpLink, "disabled")) {
+                        return false;
+                    }
+
+                    this._sortItemUp(tr, e);
+                    return false;
+                }));
+
+                on(sortDownLink, "click", lang.hitch(this, function(e) {
+                    if (domClass.contains(sortDownLink, "disabled")) {
+                        return false;
+                    }
+
+                    this._sortItemDown(tr, e);
+                    return false;
+                }));
+
+                // Remove button
                 var btn = new button({
                     label: "X",
                     main: this,
@@ -130,10 +189,22 @@
                     this.main._onInputWidgetChanged();
                 });
 
-                btn.placeAt(thirdTd);
+                btn.placeAt(fifthTd);
 
-                var newItem = this._pushItem(tr, key, value);
+                var newItem = this._pushItem(tr, key, value, sortUpLink, sortDownLink);
                 return newItem;
+            },
+
+            _getItemIndex: function (tr) {
+                for (var i = 0; i < this._keyValues.length; i++) {
+                    var entry = this._keyValues[i];
+
+                    if (entry.tr == tr) {
+                        return i;
+                    }
+                }
+
+                return -1;
             },
 
             _removeItem: function (tr) {
@@ -146,17 +217,57 @@
                 });
 
                 this._keyValues = newItems;
+                this._updateSortIcons();
             },
-            _pushItem: function (tr, key, value) {
+
+            _pushItem: function (tr, key, value, sortUpLink, sortDownLink) {
                 var o = {
                     tr: tr,
                     key: key,
-                    value: value
+                    value: value,
+                    sortUpLink: sortUpLink,
+                    sortDownLink: sortDownLink
                 };
 
                 this._keyValues.push(o);
+                this._updateSortIcons();
                 return o;
             },
+
+            _sortItemUp: function (item) {
+                var prevItem = item.previousElementSibling;
+
+                if (prevItem != null) {
+                    this._moveKeyValueItem(this._getItemIndex(item), -1);
+                    var parent = item.parentElement;
+                    parent.insertBefore(item, prevItem);
+
+                    this._onInputWidgetChanged();
+                }
+            },
+
+            _sortItemDown: function (item) {
+                var nextItem = item.nextElementSibling;
+
+                if (nextItem != null) {
+                    this._moveKeyValueItem(this._getItemIndex(item), 1);
+                    var parent = item.parentElement;
+
+                    if (nextItem == parent.lastChild) {
+                        parent.appendChild(item);
+                    } else {
+                        parent.insertBefore(item, nextItem.nextElementSibling);
+                    }
+
+                    this._onInputWidgetChanged();
+                }
+            },
+
+            _moveKeyValueItem: function (index, step) {
+                var newIndex = index + step;
+                this._keyValues.splice(newIndex, 0, this._keyValues.splice(index, 1)[0]);
+            },
+
             _getTextbox: function (value, cssClass) {
                 var tb = new textbox({
                     value: value
