@@ -51,6 +51,8 @@ Editor to search for a Place in Google maps.
     
 ![ScreenShot](/docs/google-place-selection.jpg)
 
+A basic display template is also installed at ~/Views/Shared/DisplayTemplates/GooglePlace.cshtml
+
 ### String list editor
 
 This is the same one that's included in Alloy templates package.
