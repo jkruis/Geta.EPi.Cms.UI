@@ -91,6 +91,9 @@
 
         <!-- Cleanup -->
         <RemoveDir Directories="$(TmpOutDir)" />
+
+        <!-- Temporarily copy -->
+        <Copy SourceFiles="$(OutDir)\Geta-EPi-Cms.zip" DestinationFolder="C:\Projects\GitHub\diabetesforbundet\Diabetes\Diabetesforbundet.Web\modules\_protected\geta-epi-cms" ContinueOnError="false" OverwriteReadOnlyFiles="true" />
     </Target>
 
 </Project>

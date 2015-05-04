@@ -1,0 +1,66 @@
+﻿@using System.Globalization
+@model Geta.EPi.Cms.UI.Models.GooglePlace
+
+@{
+    if (Model == null)
+    {
+        return;
+    }
+}
+
+<div id="@Model.PlaceId" data-lat="@Model.Latitude.ToString(CultureInfo.InvariantCulture.NumberFormat)" data-lng="@Model.Longitude.ToString(CultureInfo.InvariantCulture.NumberFormat)" style="padding-bottom: 56.25%"></div>
+
+<script>
+    (function (w, d) {
+        w.getaMaps = w.getaMaps || [];
+        w.getaMaps.push("@Model.PlaceId");
+
+        if (w.getaInitializeAllMaps) {
+            return;
+        }
+
+        w.getaInitializeAllMaps = function () {
+            for (var i = 0; i < w.getaMaps.length; i++) {
+                var mapDom = d.getElementById(w.getaMaps[i]),
+                    center = new google.maps.LatLng(mapDom.getAttribute("data-lat"), mapDom.getAttribute("data-lng")),
+                    mapOptions = {
+                        zoom: 15,
+                        center: center
+                    };
+
+                // Set height on dom element so the centering workds.
+                var h = mapDom.clientHeight || mapDom.offsetHeight || mapDom.scrollHeight;
+                mapDom.style.height = h + "px";
+
+                var map = new google.maps.Map(mapDom, mapOptions);
+                new google.maps.Marker({
+                    map: map,
+                    position: center
+                });
+            }
+        };
+
+        if (!d.getElementById("geta-gmaps-script")) {
+            var scr = d.createElement("script");
+            scr.id = "geta-gmaps-script";
+            scr.src = "//maps.googleapis.com/maps/api/js?v3.exp&callback=getaInitializeAllMaps";
+            d.body.appendChild(scr);
+        } else {
+            if (w.addEventListener) {
+                w.addEventListener("load", w.getaInitializeAllMaps, false);
+            }
+            else if (w.attachEvent) {
+                w.attachEvent("onload", w.getaInitializeAllMaps);
+            } else {
+                w.baseOnload = w.load;
+
+                w.load = function () {
+                    if (w.baseOnload)
+                        w.baseOnload();
+
+                    w.getaInitializeAllMaps();
+                };
+            }
+        }
+    })(window, document);
+</script>
