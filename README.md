@@ -27,6 +27,21 @@ Adds ability to search and browse through all Font Awesome icons. Currently base
 
 ![ScreenShot](/docs/keyvaluelist.jpg)
 
+Default display template shipped in package:
+
+    @model IEnumerable<KeyValuePair<string, string>>
+    
+    @if (Model != null && Model.Any())
+    {
+        <dl class="@ViewData["ListCssClass"]">
+            @foreach (KeyValuePair<string, string> item in Model)
+            {
+                <dt>@item.Key</dt>
+                <dd>@item.Value</dd>
+            }
+        </dl>
+    }
+
 ### String list editor
 
 This is the same one that's included in Alloy templates package.
