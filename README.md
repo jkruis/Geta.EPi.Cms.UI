@@ -42,6 +42,15 @@ Default display template shipped in package:
         </dl>
     }
 
+### Google Place selection editor
+
+Editor to search for a Place in Google maps.
+
+    [GooglePlaceSelection]
+    public virtual GooglePlace MyPlace { get; set; }
+    
+![ScreenShot](/docs/google-place-selection.jpg)
+
 ### String list editor
 
 This is the same one that's included in Alloy templates package.
