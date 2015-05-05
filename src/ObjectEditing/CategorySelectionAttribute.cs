@@ -1,42 +1,38 @@
 ﻿using System;
-using System.Web.Mvc;
-using EPiServer.Core;
 using EPiServer.DataAbstraction;
-using EPiServer.DataAnnotations;
-using EPiServer.Shell.ObjectEditing;
 
 namespace Geta.EPi.Cms.UI.ObjectEditing
 {
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
-public class CategorySelectionAttribute : Attribute
-{
-    public bool Multiple { get; set; }
-    public int RootCategoryId { get; set; }
-    public string RootCategoryName { get; set; }
-
-    public CategorySelectionAttribute()
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+    public class CategorySelectionAttribute : Attribute
     {
-        Multiple = true;
-    }
+        public bool Multiple { get; set; }
+        public int RootCategoryId { get; set; }
+        public string RootCategoryName { get; set; }
 
-    public int GetRootCategoryId()
-    {
-        if (RootCategoryId > 0)
+        public CategorySelectionAttribute()
         {
-            return RootCategoryId;
+            Multiple = true;
         }
 
-        if (!string.IsNullOrEmpty(RootCategoryName))
+        public int GetRootCategoryId()
         {
-            var category = Category.Find(RootCategoryName);
-
-            if (category != null)
+            if (RootCategoryId > 0)
             {
-                return category.ID;
+                return RootCategoryId;
             }
-        }
 
-        return Category.GetRoot().ID;
+            if (!string.IsNullOrEmpty(RootCategoryName))
+            {
+                var category = Category.Find(RootCategoryName);
+
+                if (category != null)
+                {
+                    return category.ID;
+                }
+            }
+
+            return Category.GetRoot().ID;
+        }
     }
-}
 }
