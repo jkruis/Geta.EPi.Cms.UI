@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+    <language id="en" name="English">
+        <geta>
+            <cms>
+                <command>
+                    <showrelatedcontentcommand>
+                        <label>Show content referencing this item</label>
+                        <tooltip>Shows a list of content with references to this item that will be affected if the item is deleted.</tooltip>
+                    </showrelatedcontentcommand>
+                </command>
+            </cms>
+        </geta>
+    </language>
+    <language id="no" name="Norsk">
+        <geta>
+            <cms>
+                <command>
+                    <showrelatedcontentcommand>
+                        <label>Vis innhold som refererer til dette elementet</label>
+                        <tooltip>Viser en liste over innhold som refererer til dette elementet og som vil påvirkes hvis elementet slettes.</tooltip>
+                    </showrelatedcontentcommand>
+                </command>
+            </cms>
+        </geta>
+    </language>
+    <language id="sv" name="Svenska">
+        <geta>
+            <cms>
+                <command>
+                    <showrelatedcontentcommand>
+                        <label>Visa innehåll som refererar till det här objektet</label>
+                        <tooltip>Visar en lista över innehåll som refererar till det här objektet och som kommer påverkas om objektet tas bort.</tooltip>
+                    </showrelatedcontentcommand>
+                </command>
+            </cms>
+        </geta>
+    </language>
+</languages>

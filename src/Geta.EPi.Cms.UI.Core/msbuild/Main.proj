@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+    <UsingTask TaskName="GetVersion"
+           TaskFactory="CodeTaskFactory"
+           AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+
+        <ParameterGroup>
+            <AssemblyPath ParameterType="System.String" Required="true" />
+            <Version ParameterType="System.String" Output="true" />
+        </ParameterGroup>
+
+        <Task>
+            <Using Namespace="System" />
+            <Using Namespace="System.Diagnostics" />
+            <Code Type="Fragment" Language="cs">
+                <![CDATA[
+                    Log.LogMessage("Getting version details of assembly at: " + this.AssemblyPath, MessageImportance.High);
+
+                    this.Version = FileVersionInfo.GetVersionInfo(this.AssemblyPath).FileVersion;
+                ]]>
+            </Code>
+        </Task>
+    </UsingTask>
+
+    <PropertyGroup>
+        <ProjectDir Condition="$(ProjectDir) == ''">$(MSBuildProjectDirectory)\..\</ProjectDir>
+        <NuGetExe>$(SolutionDir)\.nuget\NuGet.exe</NuGetExe>
+        <NuspecFile>$(ProjectDir)\Geta.EPi.Cms.UI.Core.nuspec</NuspecFile>
+    </PropertyGroup>
+
+    <Target Name="CreateNugetPackage" AfterTargets="Build">
+        <PropertyGroup>
+            <Version></Version>
+        </PropertyGroup>
+
+        <GetVersion AssemblyPath="$(ProjectDir)bin\$(Configuration)\Geta.EPi.Cms.UI.Core.dll">
+            <Output TaskParameter="Version" PropertyName="Version" />
+        </GetVersion>
+
+        <!-- Create the package -->
+        <PropertyGroup>
+            <NugetCommand>
+                "$(NuGetExe)" pack "$(NuspecFile)" -OutputDirectory "$(OutDir.TrimEnd('\\'))" -Version "$(Version)" -Properties Configuration=$(Configuration)
+            </NugetCommand>
+
+        </PropertyGroup>
+        <Exec Command="$(NugetCommand)"/>
+    </Target>
+
+</Project>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>Geta.EPi.Cms.UI.Core</id>
+        <version>$version$</version>
+        <title>Geta.EPi.Cms.UI.Core</title>
+        <authors>Mattias Olsson</authors>
+        <owners>Geta AS</owners>
+        <projectUrl>https://github.com/Geta/Geta.EPi.Cms.UI</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Library of custom editors for EPiServer.</description>
+        <releaseNotes></releaseNotes>
+        <copyright></copyright>
+        <tags>EPiServer</tags>
+        <dependencies>
+            <dependency id="EPiServer.Framework" version="7.13.2" />
+            <dependency id="EPiServer.CMS.Core" version="7.13.2" />
+            <dependency id="EPiServer.CMS.UI.Core" version="7.13.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\Geta.EPi.Cms.UI.Core.dll" target="lib\net45\" />
+    </files>
+</package>

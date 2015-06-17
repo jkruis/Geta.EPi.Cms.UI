@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.EPi.Cms.UI", "Geta.EPi.Cms.UI.csproj", "{550323D0-AB89-4291-91BD-4941FE085305}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.EPi.Cms.UI", "Geta.EPi.Cms.UI\Geta.EPi.Cms.UI.csproj", "{550323D0-AB89-4291-91BD-4941FE085305}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1F2C5C8A-5D44-4C9D-BEFC-B65D46158713}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1F2C5C
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geta.EPi.Cms.UI.Core", "Geta.EPi.Cms.UI.Core\Geta.EPi.Cms.UI.Core.csproj", "{7D408EF1-FCFA-44D7-B248-0818D91242FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +24,10 @@ Global
 		{550323D0-AB89-4291-91BD-4941FE085305}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{550323D0-AB89-4291-91BD-4941FE085305}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{550323D0-AB89-4291-91BD-4941FE085305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D408EF1-FCFA-44D7-B248-0818D91242FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D408EF1-FCFA-44D7-B248-0818D91242FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D408EF1-FCFA-44D7-B248-0818D91242FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D408EF1-FCFA-44D7-B248-0818D91242FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
