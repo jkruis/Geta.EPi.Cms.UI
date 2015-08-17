@@ -233,7 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientResources\Scripts\command\ShowRelatedContentCommand.js" />
-    <Content Include="ClientResources\Scripts\command\RelatedContentCommandProvider.js" />
+    <Content Include="ClientResources\Scripts\command\ToolsMenuCommandProvider.js" />
     <Content Include="ClientResources\Scripts\editors\FontAwesomeAutoSuggestEditor.js" />
     <Content Include="ClientResources\Scripts\editors\KeyValueList.js" />
     <Content Include="ClientResources\Scripts\editors\oEmbedMetaEditor.js" />
@@ -248,7 +248,7 @@
     <Content Include="ClientResources\Scripts\templates\KeyValueList.html" />
     <Content Include="ClientResources\Scripts\editors\GooglePlaceSelection.js" />
     <Content Include="ClientResources\Scripts\templates\oEmbedMeta.html" />
-    <Content Include="ClientResources\Scripts\ToolsMenuCommandsInitializer.js" />
+    <Content Include="ClientResources\Scripts\CommandsInitializer.js" />
     <EmbeddedResource Include="EmbeddedLangFiles\language.xml" />
   </ItemGroup>
   <ItemGroup />

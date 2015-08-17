@@ -21,7 +21,7 @@ namespace Geta.EPi.Cms.UI
         public void Initialize(InitializationEngine context)
         {
             AddLocalizationProvider(context);
-            GlobalConfiguration.Configure(ConfigureHttpRoutes);
+            ConfigureHttpRoutes();
         }
 
         private void AddLocalizationProvider(InitializationEngine context)
@@ -61,9 +61,9 @@ namespace Geta.EPi.Cms.UI
                 .Is(ConfigurationManager.AppSettings["Embedly:ApiKey"]);
         }
 
-        private void ConfigureHttpRoutes(HttpConfiguration config)
+        private static void ConfigureHttpRoutes()
         {
-            config.Routes.MapHttpRoute(
+            GlobalConfiguration.Configuration.Routes.MapHttpRoute(
                 "embedlyApiWrapper",
                 "api/oembed/{action}",
                 new { controller = "oEmbedMeta", action = "get" }
