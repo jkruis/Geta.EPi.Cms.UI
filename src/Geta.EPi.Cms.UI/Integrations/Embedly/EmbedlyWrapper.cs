@@ -26,7 +26,7 @@ namespace Geta.EPi.Cms.UI.Integrations.Embedly
             var builder = new UrlBuilder(_embedlyApiUrl + "oembed");
 
             builder.QueryCollection.Add("url", url);
-            builder.QueryCollection.Add("autoplay", "true");
+            builder.QueryCollection.Add("autoplay", "false");
 
             AddAuthentication(builder);
 
