@@ -208,7 +208,10 @@
     <None Include="Views\Shared\DisplayTemplates\GooglePlace.cshtml" />
     <None Include="Views\Shared\DisplayTemplates\KeyValueList.cshtml" />
     <None Include="Views\Shared\DisplayTemplates\StringList.cshtml" />
-    <None Include="web.config.transform">
+    <None Include="web.config.uninstall.xdt">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="web.config.install.xdt">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
