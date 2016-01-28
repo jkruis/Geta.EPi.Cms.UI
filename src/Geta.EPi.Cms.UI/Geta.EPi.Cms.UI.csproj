@@ -216,23 +216,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClientResources\Scripts\command\ShowRelatedContentCommand.js" />
-    <Content Include="ClientResources\Scripts\command\ToolsMenuCommandProvider.js" />
-    <Content Include="ClientResources\Scripts\editors\FontAwesomeAutoSuggestEditor.js" />
-    <Content Include="ClientResources\Scripts\editors\KeyValueList.js" />
-    <Content Include="ClientResources\Scripts\editors\oEmbedMetaEditor.js" />
-    <Content Include="ClientResources\Scripts\editors\StringList.js" />
-    <Content Include="ClientResources\Scripts\editors\_FontAwesomeMixin.js" />
-    <Content Include="ClientResources\Scripts\fonts\fontawesome-webfont.svg" />
-    <Content Include="ClientResources\Scripts\styles\font-awesome.min.css" />
-    <Content Include="ClientResources\Scripts\styles\GooglePlaceSelection.css" />
-    <Content Include="ClientResources\Scripts\styles\KeyValueList.css" />
-    <Content Include="ClientResources\Scripts\styles\oEmbedMetaEditor.css" />
-    <Content Include="ClientResources\Scripts\templates\GooglePlaceSelection.html" />
-    <Content Include="ClientResources\Scripts\templates\KeyValueList.html" />
-    <Content Include="ClientResources\Scripts\editors\GooglePlaceSelection.js" />
-    <Content Include="ClientResources\Scripts\templates\oEmbedMeta.html" />
-    <Content Include="ClientResources\Scripts\CommandsInitializer.js" />
+    <None Include="ClientResources\Scripts\command\ShowRelatedContentCommand.js" />
+    <None Include="ClientResources\Scripts\command\ToolsMenuCommandProvider.js" />
+    <None Include="ClientResources\Scripts\editors\FontAwesomeAutoSuggestEditor.js" />
+    <None Include="ClientResources\Scripts\editors\KeyValueList.js" />
+    <None Include="ClientResources\Scripts\editors\oEmbedMetaEditor.js" />
+    <None Include="ClientResources\Scripts\editors\StringList.js" />
+    <None Include="ClientResources\Scripts\editors\_FontAwesomeMixin.js" />
+    <None Include="ClientResources\Scripts\fonts\fontawesome-webfont.svg" />
+    <None Include="ClientResources\Scripts\styles\font-awesome.min.css" />
+    <None Include="ClientResources\Scripts\styles\GooglePlaceSelection.css" />
+    <None Include="ClientResources\Scripts\styles\KeyValueList.css" />
+    <None Include="ClientResources\Scripts\styles\oEmbedMetaEditor.css" />
+    <None Include="ClientResources\Scripts\templates\GooglePlaceSelection.html" />
+    <None Include="ClientResources\Scripts\templates\KeyValueList.html" />
+    <None Include="ClientResources\Scripts\editors\GooglePlaceSelection.js" />
+    <None Include="ClientResources\Scripts\templates\oEmbedMeta.html" />
+    <None Include="ClientResources\Scripts\CommandsInitializer.js" />
     <EmbeddedResource Include="EmbeddedLangFiles\language.xml" />
   </ItemGroup>
   <ItemGroup />
