@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-    <episerver.shell>
-        <protectedModules>
+    <episerver.shell xdt:Transform="InsertIfMissing">
+        <protectedModules xdt:Transform="InsertIfMissing">
             <add name="geta-epi-cms" xdt:Transform="Insert" xdt:Locator="Match(name)" />
         </protectedModules>
     </episerver.shell>
