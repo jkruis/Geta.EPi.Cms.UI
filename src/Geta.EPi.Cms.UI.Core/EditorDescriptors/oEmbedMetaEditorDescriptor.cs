@@ -16,7 +16,7 @@ namespace Geta.EPi.Cms.UI.Core.EditorDescriptors
             var url = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
 
             base.ModifyMetadata(metadata, attributes);
-            ClientEditingClass = "geta-epi-cms.editors.oEmbedMetaEditor";
+            ClientEditingClass = "geta-epi-cms/editors/oEmbedMetaEditor";
             metadata.EditorConfiguration["embedlyApiUrl"] = ConfigurationManager.AppSettings["Embedly:ApiUrl"];
             metadata.EditorConfiguration["embedlyApiKey"] = ConfigurationManager.AppSettings["Embedly:ApiKey"];
             metadata.EditorConfiguration["siteUrl"] = VirtualPathUtility.AppendTrailingSlash(url);

@@ -17,7 +17,7 @@
     "xstyle/css!../styles/oEmbedMetaEditor.css"
 ],
 function (declare, lang, on, domConstruct, xhr, template, _TemplatedMixin, _WidgetsInTemplateMixin, _Widget, TextBox, _ValueRequiredMixin, dependency, epi) {
-    return declare("geta-epi-cms.editors.oEmbedMetaEditor", [_Widget, _TemplatedMixin, _WidgetsInTemplateMixin, _ValueRequiredMixin], {
+    return declare("geta-epi-cms/editors/oEmbedMetaEditor", [_Widget, _TemplatedMixin, _WidgetsInTemplateMixin, _ValueRequiredMixin], {
         templateString: template,
         value: null,
         widgetsInTemplate: true,

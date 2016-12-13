@@ -8,7 +8,7 @@ function (
     _FontAwesomeMixin,
     AutoCompleteSelectionEditor
 ) {
-    return declare("geta-epi-cms.editors.FontAwesomeAutoSuggestEditor", [_FontAwesomeMixin, AutoCompleteSelectionEditor], {
+    return declare("geta-epi-cms/editors/FontAwesomeAutoSuggestEditor", [_FontAwesomeMixin, AutoCompleteSelectionEditor], {
         labelAttr: "label",
         labelType: "html",
 

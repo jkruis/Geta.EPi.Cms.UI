@@ -16,7 +16,7 @@
         TypeDescriptorManager,
         resources
     ) {
-        return declare("geta-epi-cms.command.ShowRelatedContentCommand", [_Command], {
+        return declare("geta-epi-cms/command/ShowRelatedContentCommand", [_Command], {
             name: "ContentReferences",
             label: resources.label,
             tooltip: resources.tooltip,

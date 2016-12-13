@@ -13,7 +13,7 @@
     routes,
     ToolsMenuCommandProvider
 ) {
-    return declare("geta-epi-cms.CommandsInitializer", [_Module], {
+    return declare("geta-epi-cms/CommandsInitializer", [_Module], {
         initialize: function () {
             this.inherited(arguments);
             var commandregistry = dependency.resolve("epi.globalcommandregistry");

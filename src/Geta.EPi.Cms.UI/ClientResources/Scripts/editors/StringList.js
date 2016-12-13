@@ -34,7 +34,7 @@ function (
     _ValueRequiredMixin
 ) {
 
-    return declare("geta-epi-cms.editors.StringList", [_Widget, _TemplatedMixin, _WidgetsInTemplateMixin, _CssStateMixin, _ValueRequiredMixin], {
+    return declare("geta-epi-cms/editors/StringList", [_Widget, _TemplatedMixin, _WidgetsInTemplateMixin, _CssStateMixin, _ValueRequiredMixin], {
 
         templateString: "<div class=\"dijitInline\">\
                             <div data-dojo-attach-point=\"stateNode, tooltipNode\">\

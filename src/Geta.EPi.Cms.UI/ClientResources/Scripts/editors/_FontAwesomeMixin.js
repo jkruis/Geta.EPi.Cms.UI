@@ -7,7 +7,7 @@ function (
     declare,
     memorystore
 ) {
-    return declare("geta-epi-cms.editors._FontAwesomeMixin", null, {
+    return declare("geta-epi-cms/editors/_FontAwesomeMixin", null, {
         _createMemoryStore: function () {
             var fontAwesomeStylesheet = this._getFontAwesomeStylesheet();
             var memoryStoreData = [];

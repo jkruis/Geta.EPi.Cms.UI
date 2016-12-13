@@ -43,7 +43,7 @@ function (
 
     epi
 ) {
-    return declare("geta-epi-cms.editors.GooglePlaceSelection", [_Widget, _TemplatedMixin, _WidgetsInTemplateMixin, Stateful], {
+    return declare("geta-epi-cms/editors/GooglePlaceSelection", [_Widget, _TemplatedMixin, _WidgetsInTemplateMixin, Stateful], {
         templateString: template,
         mapNode: null,
         searchFieldNode: null,

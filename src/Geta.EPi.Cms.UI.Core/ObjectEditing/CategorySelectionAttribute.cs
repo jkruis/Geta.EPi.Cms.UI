@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using EPiServer.DataAbstraction;
+using EPiServer.ServiceLocation;
 
 namespace Geta.EPi.Cms.UI.Core.ObjectEditing
 {
@@ -29,9 +30,11 @@ namespace Geta.EPi.Cms.UI.Core.ObjectEditing
                 return RootCategoryId;
             }
 
+            var categoryRepo = ServiceLocator.Current.GetInstance<CategoryRepository>();
+
             if (!string.IsNullOrWhiteSpace(RootCategoryName))
             {
-                var category = Category.Find(RootCategoryName);
+                var category = categoryRepo.Get(RootCategoryName);
 
                 if (category != null)
                 {
@@ -50,7 +53,7 @@ namespace Geta.EPi.Cms.UI.Core.ObjectEditing
                 }
             }
 
-            return Category.GetRoot().ID;
+            return categoryRepo.GetRoot().ID;
         }
     }
 }

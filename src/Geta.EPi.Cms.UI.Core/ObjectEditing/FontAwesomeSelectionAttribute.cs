@@ -17,7 +17,7 @@ namespace Geta.EPi.Cms.UI.Core.ObjectEditing
                 return;
             }
 
-            extendedMetaData.ClientEditingClass = "geta-epi-cms.editors.FontAwesomeAutoSuggestEditor";
+            extendedMetaData.ClientEditingClass = "geta-epi-cms/editors/FontAwesomeAutoSuggestEditor";
             extendedMetaData.CustomEditorSettings["uiType"] = extendedMetaData.ClientEditingClass;
             extendedMetaData.CustomEditorSettings["uiWrapperType"] = UiWrapperType.Floating;
         }

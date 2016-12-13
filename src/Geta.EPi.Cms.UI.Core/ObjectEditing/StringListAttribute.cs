@@ -22,7 +22,7 @@ namespace Geta.EPi.Cms.UI.Core.ObjectEditing
                 return;
             }
 
-            extendedMetaData.ClientEditingClass = "geta-epi-cms.editors.StringList";
+            extendedMetaData.ClientEditingClass = "geta-epi-cms/editors/StringList";
         }
     }
 }

@@ -36,7 +36,7 @@
         epi, 
         valueRequiredMixin
      ) {
-        return declare("geta-epi-cms.editors.KeyValueList", [widgetBase, templatedMixin, _WidgetsInTemplateMixin, valueRequiredMixin], {
+        return declare("geta-epi-cms/editors/KeyValueList", [widgetBase, templatedMixin, _WidgetsInTemplateMixin, valueRequiredMixin], {
             templateString: template,
             baseClass: "keyValueList",
             addButtonLabel: "Add new",
