@@ -56,9 +56,9 @@ namespace Geta.EPi.Cms.UI
             container.For<EmbedlyWrapper>()
                 .Use<EmbedlyWrapper>()
                 .Ctor<string>("apiUrl")
-                .Is(ConfigurationManager.AppSettings["Embedly:ApiUrl"])
+                .Is(ConfigurationManager.AppSettings["Embedly:ApiUrl"] ?? string.Empty)
                 .Ctor<string>("apiKey")
-                .Is(ConfigurationManager.AppSettings["Embedly:ApiKey"]);
+                .Is(ConfigurationManager.AppSettings["Embedly:ApiKey"] ?? string.Empty);
         }
 
         private static void ConfigureHttpRoutes()
