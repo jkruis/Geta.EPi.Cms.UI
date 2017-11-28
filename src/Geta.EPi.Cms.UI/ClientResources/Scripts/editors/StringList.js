@@ -38,7 +38,7 @@ function (
 
         templateString: "<div class=\"dijitInline\">\
                             <div data-dojo-attach-point=\"stateNode, tooltipNode\">\
-                                <div data-dojo-attach-point=\"textArea\" data-dojo-type=\"dijit.form.Textarea\" style=\"width: 300px\"></div>\
+                                <div data-dojo-attach-point=\"textArea\" data-dojo-type=\"dijit/form/Textarea\" style=\"width: 300px\"></div>\
                             </div>\
                             <br />\
                             <span>${helptext}</span>\
